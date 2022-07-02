@@ -9,8 +9,9 @@ test: homework4.c ../incl/bitmap.h
 
 install: test
 	cp test $(INSIDIR);\
+	rm test;
 
-pic: test
+pic: install
 # 	for iteration_times in {20 40 70 100};do\
 #		echo "$(iteration_times)";\这居然总是显示空字符串
 # 		./test res_$(iteration_times).bmp -0.75 0 1.7 40;\
@@ -38,7 +39,7 @@ pic: test
 # 	convert res_5000.bmp res_5000.png;\
 # 	cp res_5000.png ../examples/res_5000.png;\
 # 	rm res_5000.bmp res_5000.png;
-	./test res_color_400.bmp -0.75 0 1.7 400;\
+	../bin/test res_color_400.bmp -0.75 0 1.7 400;\
 	convert res_color_400.bmp res_color_400.png;\
 	cp res_color_400.png ../examples/res_color_400.png;\
 	rm res_color_400.bmp res_color_400.png;
